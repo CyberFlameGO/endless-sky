@@ -360,7 +360,7 @@ jobs:
     - name: Install xvfb runtime dependencies
       run: sudo apt-get install -y --no-install-recommends libosmesa6 mesa-utils # TODO: ALSA mocking?
     - name: Download artifact
-      uses: actions/download-artifact@v1.0.0
+      uses: actions/download-artifact@v4.1.7
       with:
         name: binary-${{ matrix.os }}-${{ matrix.opengl }}
         path: .
@@ -392,7 +392,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y --no-install-recommends libsdl2-2.0-0 libpng16-16 libjpeg-turbo8 libopenal1 libmad0 ${{ matrix.glew }} libgl1 uuid-runtime
     - name: Download game binary
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         name: binary-${{ matrix.os }}-${{ matrix.opengl }}
     - name: Verify Executable
@@ -422,7 +422,7 @@ jobs:
         COPY $Env:DIR_MINGW64\lib\libstdc++-6.dll .
         COPY $Env:DIR_MINGW64\lib\libwinpthread-1.dll .
     - name: Download game binary
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         name: binary-${{ matrix.os }}
     - name: Parse Datafiles
@@ -462,7 +462,7 @@ jobs:
         ln -s ../../images
         ln -s ../../sounds
     - name: Download game binary
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         name: binary-${{ matrix.os }}
         path: Contents/MacOS
@@ -490,7 +490,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y --no-install-recommends libsdl2-2.0-0 libpng16-16 libjpeg-turbo8 libopenal1 libmad0 ${{ matrix.glew }} libgl1 valgrind uuid-runtime
     - name: Download game binary
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         name: binary-${{ matrix.os }}-${{ matrix.opengl }}
     - name: Verify Executable
