@@ -132,7 +132,7 @@ jobs:
     - name: Extract Steam Runtime
       run: tar -xf ${{ env.tarball }}
     - name: Download Endless Sky binary
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         name: binary-${{ runner.os }}-x86_64
         path: .
@@ -164,7 +164,7 @@ jobs:
       ARTIFACT: endless-sky
     steps:
     - name: Download Artifacts
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         path: ${{ github.workspace }}
     - name: Prepare binary upload
